@@ -1,6 +1,6 @@
 # NightPatcher
 
-[Downloads]() | [Splatoon Modding Hub](http://gbatemp.net/threads/splatoon-modding-hub.425670/)
+[Downloads](https://github.com/OatmealDome/SplatoonUtilities/releases/tag/NightPatcher) | [Splatoon Modding Hub](http://gbatemp.net/threads/splatoon-modding-hub.425670/)
 
 NightPatcher is a utility that automatically patches MapInfo.byaml to force "Splatfest mode" for all multiplayer maps, regardless if there is a Splatfest active at the moment. There is one known bug: The Splatfest intro and one minute remaining music will play; however, the battle BGM will be randomized as normal.
 
