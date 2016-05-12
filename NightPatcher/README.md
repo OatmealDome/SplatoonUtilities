@@ -4,6 +4,10 @@
 
 NightPatcher is a utility that automatically patches MapInfo.byaml to force "Splatfest mode" for all multiplayer maps, regardless if there is a Splatfest active at the moment. There is one known bug: The Splatfest intro and one minute remaining music will play; however, the battle BGM will be randomized as normal.
 
+If you wish to exclude certain maps from the patch, open up NightPatcher.py with Notepad (or your favourite text editor). You will find a list of all the multiplayer maps' internal and "common" names. To exclude a stage, add a \# symbol to the beginning of the line.
+
+This is my first time programming in Python. Please be gentle :P
+
 **Please note that there is a risk of you being banned if you use this. I do not take any responsibility if you are banned by Nintendo.**
 
 ## Usage
@@ -38,3 +42,9 @@ NightPatcher is a utility that automatically patches MapInfo.byaml to force "Spl
 Example structure for North America:
 
 <img src="http://i.imgur.com/d5v4MWb.png" />
+
+## Credits
+
+* Kinnay, MrRean, RoadrunnerWM: for byml.py ([original repository](https://github.com/MrRean/Splat3D))
+* NWPlayer123: for SARCTools ([original repository](https://github.com/NWPlayer123/WiiUTools/tree/master/SARCTools)) and for starting Splatoon's modding "scene"
+* RenolY2: for cleaning up and updating sarc-extract ([original repository](https://github.com/RenolY2/sarc-extract))
