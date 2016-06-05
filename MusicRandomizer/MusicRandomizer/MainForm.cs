@@ -109,7 +109,6 @@ namespace MusicRandomizer
             if (!File.Exists("Tracks.xml"))
             {
                 musicFiles = new List<MusicFile>();
-                SaveTrackList();
 
                 lstOutput.Items.Add("Please import your first track.");
             }
@@ -119,9 +118,9 @@ namespace MusicRandomizer
                 {
                     musicFiles = (List<MusicFile>)serializer.Deserialize(stream);
                 }
-
-                RefreshTrackList(true);
             }
+
+            RefreshTrackList();
 
             backgroundWorker.RunWorkerAsync();
         }
@@ -130,18 +129,18 @@ namespace MusicRandomizer
         {
         }
 
-        public void RefreshTrackList(Boolean clearTrackers)
+        public void RefreshTrackList()
         {
             lsvTracks.Items.Clear();
 
-            if (clearTrackers)
-            {
-                fileTrackers.Clear();
+            int numberOfTrackers = Enum.GetValues(typeof(TrackType)).Length - 1; // subtract 1 so Unknown is not included
+            Console.WriteLine(numberOfTrackers);
 
-                for (int i = 0; i < 17; i++) // update this if the list of TrackTypes expands
-                {
-                    fileTrackers.Add(new FileTracker());
-                }
+            fileTrackers.Clear();
+
+            for (int i = 0; i < numberOfTrackers; i++)
+            {
+                fileTrackers.Add(new FileTracker());
             }
 
             foreach (MusicFile file in musicFiles)
@@ -149,10 +148,7 @@ namespace MusicRandomizer
                 String types = "";
                 foreach (TrackType type in file.types)
                 {
-                    if (!fileTrackers[(int)type].files.Contains(file))
-                    {
-                        fileTrackers[(int)type].files.Add(file);
-                    }
+                    fileTrackers[(int)type].files.Add(file);
 
                     types += type.ToUIString() + ", ";
                 }
