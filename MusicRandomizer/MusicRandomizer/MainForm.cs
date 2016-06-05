@@ -84,6 +84,7 @@ namespace MusicRandomizer
 
         public static readonly Random random = new Random();
         public List<MusicFile> musicFiles;
+        private XmlSerializer serializer = new XmlSerializer(typeof(List<MusicFile>), new XmlRootAttribute("Tracks"));
         private List<FileTracker> fileTrackers = new List<FileTracker>();
         private MusicFile playNext = null;
         private PlayMode playMode = PlayMode.Shuffle;
@@ -105,7 +106,6 @@ namespace MusicRandomizer
                 Directory.CreateDirectory(Path.Combine("other_files", "vol", "content"));
             }
 
-            XmlSerializer serializer = new XmlSerializer(typeof(List<MusicFile>), new XmlRootAttribute("Tracks"));
             if (!File.Exists("Tracks.xml"))
             {
                 musicFiles = new List<MusicFile>();
@@ -168,7 +168,6 @@ namespace MusicRandomizer
         public void SaveTrackList()
         {
             File.Delete("Tracks.xml");
-            XmlSerializer serializer = new XmlSerializer(typeof(List<MusicFile>), new XmlRootAttribute("Tracks"));
             using (FileStream writer = File.OpenWrite("Tracks.xml"))
             {
                 serializer.Serialize(writer, musicFiles);
