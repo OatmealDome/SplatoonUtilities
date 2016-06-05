@@ -46,9 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CafiineServer.cs" />
     <Compile Include="EndianBinaryReader.cs" />
     <Compile Include="EndianBinaryWriter.cs" />
     <Compile Include="FileTracker.cs" />
+    <Compile Include="LogType.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

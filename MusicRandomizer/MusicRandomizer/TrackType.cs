@@ -131,23 +131,23 @@ namespace MusicRandomizer
                     return TrackType.NewsBackground;
                 }
             }
-            else if (fileName.Equals("STRM_Match.bfstm"))
+            else if (fileName.Equals("STRM_Match"))
             {
                 return TrackType.VSWait;
             }
-            else if (fileName.Equals("STRM_Lobby.bfstm"))
+            else if (fileName.Equals("STRM_Lobby"))
             {
                 return TrackType.VSLobby;
             }
-            else if (fileName.Equals("STRM_Win02.bfstm"))
+            else if (fileName.Equals("STRM_Win02"))
             {
                 return TrackType.VSWinJingle;
             }
-            else if (fileName.Equals("STRM_Lose.bfstm"))
+            else if (fileName.Equals("STRM_Lose"))
             {
                 return TrackType.VSLoseJingle;
             }
-            else if (fileName.Equals("STRM_World.bfstm"))
+            else if (fileName.Equals("STRM_World"))
             {
                 return TrackType.SoloWorld;
             }
