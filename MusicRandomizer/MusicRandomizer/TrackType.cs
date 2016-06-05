@@ -4,7 +4,7 @@ namespace MusicRandomizer
 {
     public enum TrackType
     {
-        // VS = Multiplayer, Solo = Single Player
+        // VS = Multiplayer, Solo = Single Player, News = Inkopolis News
         Unknown = -1,
         VSLobby = 0,
         VSWait, // plays during Lobby matchmaking
