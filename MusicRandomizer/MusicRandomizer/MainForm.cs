@@ -266,7 +266,6 @@ namespace MusicRandomizer
                                     if (isSplatoon)
                                     {
                                         String localPath = "other_files" + path;
-                                        Log(LogType.Info, name + "request: " + localPath);
                                         if (path.Contains(".bfstm"))
                                         {
                                             String strippedPath = Path.GetFileName(path);
