@@ -63,7 +63,6 @@ namespace MusicRandomizer
             lsvTracks.Items.Clear();
 
             int numberOfTrackers = Enum.GetValues(typeof(TrackType)).Length - 1; // subtract 1 so Unknown is not included
-            Console.WriteLine(numberOfTrackers);
 
             fileTrackers.Clear();
 
@@ -247,7 +246,11 @@ namespace MusicRandomizer
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO
+            String version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+            // show a poor man's version of an about dialog
+            MessageBox.Show("MusicRandomizer (" + version + ")\nCopyright (c) 2016 OatmealDome");
+
         }
     }
 }
