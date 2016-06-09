@@ -100,6 +100,12 @@ namespace MusicRandomizer
 
         public MusicFile GetFile(String strippedPath)
         {
+            TrackType trackType = TrackTypeUtils.FileNameToTrackType(Path.GetFileName(strippedPath));
+            if (trackType == TrackType.Unknown)
+            {
+                return null;
+            }
+
             MusicFile musicFile;
             if (playNext != null)
             {
@@ -108,12 +114,6 @@ namespace MusicRandomizer
             }
             else
             {
-                TrackType trackType = TrackTypeUtils.FileNameToTrackType(Path.GetFileName(strippedPath));
-                if (trackType == TrackType.Unknown)
-                {
-                    return null;
-                }
-
                 musicFile = fileTrackers[(int)trackType].getTrack(this.playMode);
                 if (musicFile == null)
                 {
