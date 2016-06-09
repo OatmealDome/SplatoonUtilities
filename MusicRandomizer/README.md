@@ -50,15 +50,15 @@ Please note:
 ## Troubleshooting
 
 1. Splatoon hangs on the splash screen with the drums playing
-* There are two possible causes:
-* The Wii U cannot connect to the Cafiine server running on your computer.
-* There is an issue with a file in the "other_files" folder that caused the game to hang.
-* Did you enter the right IP address?
-* Is MusicRandomizer running?
-* Have you tried turning off your firewall?
-* If there are files in the "other_files" folder, verify their integrity.
+   * There are two possible causes:
+     * The Wii U cannot connect to the Cafiine server running on your computer.
+     * There is an issue with a file in the "other_files" folder that caused the game to hang.
+   * Did you enter the right IP address?
+   * Is MusicRandomizer running?
+   * Have you tried turning off your firewall?
+   * If there are files in the "other_files" folder, verify their integrity.
 
 2. Sometimes the music "skips" or "pauses" briefly
-* This can be indicative of network or computer lag. 
-* Is anyone else on the network downloading files, watching videos, or other bandwidth-heavy activities?
-* Is the computer running MusicRandomizer doing computationally intensive tasks like playing a video game?
+   * This can be indicative of network or computer lag. 
+   * Is anyone else on the network downloading files, watching videos, or other bandwidth-heavy activities?
+   * Is the computer running MusicRandomizer doing computationally intensive tasks like playing a video game?
