@@ -65,7 +65,7 @@ In the following scenario, I want to change the language from Canadian French to
 * copy ```CommonMsg_JPja.szs``` from Uwizard → ```CommonMsg_USfr.szs``` in cafiine
 * copy ```LayoutMsg_JPja.szs``` from Uwizard → ```LayoutMsg_USfr.szs``` in cafiine
 
-In the next scenario, I want to change the language from Dutch to American English.
+In the next scenario, I want to change the language from German to American English.
 
 * download using title ID ```0005000E101769000``` (North America) in Uwizard
 * create cafiine file structure using title ID ```00050000-10176A00``` (Europe)
@@ -92,7 +92,7 @@ This is a list of the different versions of Splatoon and which language files th
    * British English (EUen)
    * French (EUfr)
    * Spanish (EUes)
-   * Dutch (EUde)
+   * German (EUde)
    * Italian (EUit)
    
 - Japan (```00050000-10162B00```, JP)
