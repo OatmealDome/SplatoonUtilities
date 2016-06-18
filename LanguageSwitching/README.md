@@ -22,8 +22,8 @@ This guide will help you change your current language to a different one.
 3. Open Uwizard and go to the "Settings" tab.
 4. Paste the Wii U's common key into the box dedicated for it. If it is correct, then the text next to the text box will turn green.
 5. Go to the "NUS Downloader U" tab.
-6. Enter in the title ID (see below), changing the last 0 before the dash to an E, leaving out the dash, and adding a 0 to the end. (example for North America: 0005000E101769000)
-7. Enter in the latest version number (as of June 13, 2016 it is 208) and check "Decrypt Contents". If you do not enter in the latest version number, you will get outdated files and some strings may be missing. (Version numbers are multiples of 16.)
+6. Enter in the title ID (see below), changing the last 0 before the dash to an E, leaving out the dash, and adding a 0 to the end. (example for North America: ```0005000E101769000```)
+7. Enter in the latest version number (as of June 13, 2016 it is ```208```) and check "Decrypt Contents". If you do not enter in the latest version number, you will get outdated files and some strings may be missing. (Version numbers are multiples of 16.)
 8. Click "Start Download" and wait. Once it is finished, Windows Explorer will pop up with the newly downloaded and decrypted files.
 
 ### Replacing the language files
@@ -32,16 +32,16 @@ This guide will help you change your current language to a different one.
 2. Create the following folder structures inside the above folder (the title ID you enter here is **not** the one for Uwizard, but rather the title ID of your copy of Splatoon):
 
 
-   - cafiine_root/[your copy's title ID]/vol/content/Font
-   - cafiine_root/[your copy's title ID]/vol/content/Message
-   - logs/
+   - ```cafiine_root/[your copy's title ID]/vol/content/Font```
+   - ```cafiine_root/[your copy's title ID]/vol/content/Message```
+   - ```logs/```
 
 
-3. Copy the only file in nus_content/[Uwizard title ID]/vol/content/Font to the Font folder in cafiine_root.
-4. Rename it to BmpFont_[region code].szs, where "region code" is your current copy's region code (see below).
-5. Copy nus_content/[Uwizard title ID]/vol/content/Message/CommonMsg_[target language code].szs to the Message folder in cafiine_root, where "target language code" is the code of the language you want to change to.
+3. Copy the only file in ```nus_content/[Uwizard title ID]/vol/content/Font``` to the Font folder in ```cafiine_root```.
+4. Rename it to ```BmpFont_[region code].szs```, where "region code" is your current copy's region code (see below).
+5. Copy ```nus_content/[Uwizard title ID]/vol/content/Message/CommonMsg_[target language code].szs``` to the Message folder in cafiine_root, where "target language code" is the code of the language you want to change to.
 6. Rename the above file, replacing the language code with the one which your copy of Splatoon is currently running in.
-7. Repeat steps 5 and 6 for LayoutMsg_[target language code].szs.
+7. Repeat steps 5 and 6 for ```LayoutMsg_[target language code].szs```.
 
 ### Using cafiine
 
@@ -59,25 +59,25 @@ These examples are provided in case the above instructions aren't clear enough.
 
 In the following scenario, I want to change the language from Canadian French to Japanese.
 
-* download using title ID 0005000E10162B000 (Japan) in Uwizard
-* create file structure using cafiine_root/00050000-10176900/ (North America)
-* copy BmpFont_JP.szs from Uwizard → BmpFont_US.szs in cafiine
-* copy CommonMsg_JPja.szs from Uwizard → CommonMsg_USfr.szs in cafiine
-* copy LayoutMsg_JPja.szs from Uwizard → LayoutMsg_USfr.szs in cafiine
+* download using title ID ```0005000E10162B000``` (Japan) in Uwizard
+* create cafiine file structure using title ID ```00050000-10176900``` (North America)
+* copy ```BmpFont_JP.szs``` from Uwizard → ```BmpFont_US.szs``` in cafiine
+* copy ```CommonMsg_JPja.szs``` from Uwizard → ```CommonMsg_USfr.szs``` in cafiine
+* copy ```LayoutMsg_JPja.szs``` from Uwizard → ```LayoutMsg_USfr.szs``` in cafiine
 
 In the next scenario, I want to change the language from Dutch to American English.
 
-* download using title ID 0005000E101769000 (North America) in Uwizard
-* create file structure using cafiine_root/00050000-10176A00/ (Europe)
-* copy BmpFont_US.szs from Uwizard → BmpFont_EU.szs in cafiine
-* copy CommonMsg_USen.szs from Uwizard → CommonMsg_EUde.szs in cafiine
-* copy LayoutMsg_USen.szs from Uwizard → LayoutMsg_EUde.szs in cafiine
+* download using title ID ```0005000E101769000``` (North America) in Uwizard
+* create cafiine file structure using title ID ```00050000-10176A00``` (Europe)
+* copy ```BmpFont_US.szs``` from Uwizard → ```BmpFont_EU.szs``` in cafiine
+* copy ```CommonMsg_USen.szs``` from Uwizard → ```CommonMsg_EUde.szs``` in cafiine
+* copy ```LayoutMsg_USen.szs``` from Uwizard → ```LayoutMsg_EUde.szs``` in cafiine
 
 ## Languages
 
 This is a list of the different versions of Splatoon and which language files they contain. The title ID as well as the region code is listed next to each header for each region's copy. Language codes are listed next to the names of the languages.
 
-- North America (00050000-10176900, US)
+- North America (```00050000-10176900```, US)
 
    These are translations by the Treehouse from Nintendo of America.
 
@@ -85,7 +85,7 @@ This is a list of the different versions of Splatoon and which language files th
     * Canadian French (USfr)
     * Spanish (USes)
     
-- Europe (00050000-10176A00, EU)
+- Europe (```00050000-10176A00```, EU)
 
    These are translations by Nintendo of Europe.
    
@@ -95,7 +95,7 @@ This is a list of the different versions of Splatoon and which language files th
    * Dutch (EUde)
    * Italian (EUit)
    
-- Japan (00050000-10162B00, JP)
+- Japan (```00050000-10162B00```, JP)
 
    This is the source text for all translations.
 
