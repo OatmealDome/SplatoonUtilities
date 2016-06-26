@@ -8,7 +8,7 @@ If you wish to exclude certain maps from the patch, open up NightPatcher.py with
 
 This is my first time programming in Python. Please be gentle :P
 
-**Please note that there is a risk of you being banned if you use this. I do not take any responsibility if you are banned by Nintendo.**
+**You will be banned if you use this online. I do not take any responsibility if Nintendo does ban you.**
 
 ## Usage
 
