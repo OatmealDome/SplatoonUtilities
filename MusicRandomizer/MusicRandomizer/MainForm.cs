@@ -51,7 +51,8 @@ namespace MusicRandomizer
 
             RefreshTrackList();
 
-            backgroundWorker.RunWorkerAsync();
+            cafiineWorker.RunWorkerAsync();
+            updateWorker.RunWorkerAsync(false);
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -127,10 +128,10 @@ namespace MusicRandomizer
 
         public void Log(LogType type, String str)
         {
-            backgroundWorker.ReportProgress((int) type, str);
+            cafiineWorker.ReportProgress((int) type, str);
         }
 
-        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void cafiineWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             try
             {
@@ -143,7 +144,7 @@ namespace MusicRandomizer
             }
         }
 
-        private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void cafiineWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             String message = e.UserState.ToString();
             LogType type = (LogType)e.ProgressPercentage;
@@ -157,6 +158,32 @@ namespace MusicRandomizer
                     lstOutput.Items.Add(message);
                     lstOutput.TopIndex = lstOutput.Items.Count - 1;
                     break;
+            }
+        }
+
+        private void updateWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            String version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            UpdateInfo updateInfo = UpdateChecker.CheckForUpdate();
+
+            if (!version.Equals(updateInfo.latestVersion))
+            {
+                String dialogString = "Version " + updateInfo.latestVersion + " is now available for MusicRandomizer with the following changes:\n\n" + updateInfo.changes;
+                dialogString += "\n\nWould you like to download the latest update from GitHub now?";
+
+                DialogResult result = MessageBox.Show(dialogString, "Update available", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.usageToolStripMenuItem_Click(null, null);
+                }
+            }
+            else
+            {
+                if ((Boolean)e.Argument)
+                {
+                    MessageBox.Show("There is no update available right now.", "No update available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -234,6 +261,11 @@ namespace MusicRandomizer
             }
         }
 
+        private void checkForUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            updateWorker.RunWorkerAsync(true);
+        }
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -250,7 +282,6 @@ namespace MusicRandomizer
 
             // show a poor man's version of an about dialog
             MessageBox.Show("MusicRandomizer (" + version + ")\nCopyright (c) 2016 OatmealDome");
-
         }
     }
 }
