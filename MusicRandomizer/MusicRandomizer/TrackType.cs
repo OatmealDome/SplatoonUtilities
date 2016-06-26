@@ -71,7 +71,9 @@ namespace MusicRandomizer
 
         public static TrackType FileNameToTrackType(String fileName)
         {
-            if (fileName.StartsWith("STRM_VS")) // we use StartsWith because there's a track in the Plaza with VS in the name
+            // we use StartsWith because there's a track in the Plaza with VS in the name
+            // we also leave out the "S" because for StartDemo it is lowercase *headdesk*
+            if (fileName.StartsWith("STRM_V"))
             {
                 if (fileName.Contains("StartDemo"))
                 {
@@ -109,7 +111,7 @@ namespace MusicRandomizer
                     return TrackType.SoloMission;
                 }
             }
-            else if (fileName.Contains("Result"))
+            else if (!fileName.StartsWith("Jingle") && fileName.Contains("Result"))
             {
                 if (fileName.Contains("Lose"))
                 {
