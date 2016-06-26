@@ -115,7 +115,7 @@ namespace MusicRandomizer
                         isSplatoon = true;
                     }
                     
-                    Log(LogType.Info, name + " Accepted connection " + ((isSplatoon) ? "(Splatoon)" : ""));
+                    Log(LogType.Info, name + " Accepted connection (" + ((isSplatoon) ? "Splatoon" : titleId) + ")");
 
                     writer.Write(BYTE_SPECIAL);
 
