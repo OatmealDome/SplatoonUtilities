@@ -4,11 +4,9 @@
 
 <img src="http://i.imgur.com/PnaL55y.jpg" width="53%" height="53%"/> <img src="http://i.imgur.com/AKXKPkZ.png" width="40%" height="40%" />
 
-MusicRandomizer is a modified Cafiine server that replaces Splatoon's music with custom tracks in a randomized order. It has the ability to replace one track like the matchmaking theme (Ika Jamaica) with multiple different tracks. Normally, you would only be able to replace Ika Jamaica with one single track!
+MusicRandomizer is a modified Cafiine server that replaces Splatoon's music with custom tracks in a randomized order. It has the ability to replace one track like the matchmaking theme (Ika Jamaica) with multiple different tracks. If you did this manually with cafiine_server, you would only be able to replace Ika Jamaica with one single track.
 
-Additionally, MusicRandomizer functions as a normal Cafiine server, so you can use other file replacement hacks like forced night mode simulataniously. (Unfortunately, because Cafiine and TCPGecko cannot be combined at this time, you cannot use hacks like octohax at the same time as MusicRandomizer.)
-
-If you wish to mute the music altogether, there is a file called Silent.bfstm included in the package. You can import this file and set it so that certain sections of the game (ex Multiplayer matches) will have no music at all.
+Additionally, MusicRandomizer functions as a normal Cafiine server, so you can use other file replacement hacks like language switching simultaneously. (Unfortunately, because Cafiine and TCPGecko cannot be combined at this time, you cannot use hacks like octohax at the same time as MusicRandomizer.)
 
 **Custom music is safe to use online at this time. However, if it becomes unsafe in the future, I do not take any responsibility if you are banned.**
 
@@ -16,9 +14,9 @@ If you wish to mute the music altogether, there is a file called Silent.bfstm in
 
 ### Prerequisites
 
-* Windows (Mac and Linux users, use Wine or Mono)
+* Windows (Mac and Linux users, use Wine)
 * [.NET Framework 4.5.2](http://go.microsoft.com/fwlink/?LinkId=328843)
-* Music in the BFSTM format (You can get these from places like [Smash Custom Music](http://smashcustommusic.com). You can even create them yourself. See below for more information.)
+* Music in the BFSTM format (You can get these from places like [Smash Custom Music](http://smashcustommusic.com). You can even create them yourself! See below for more information.)
 * [Your local IP address](http://windows.microsoft.com/en-ca/windows/find-computers-ip-address#1TC=windows-7)
 
 ### Instructions
