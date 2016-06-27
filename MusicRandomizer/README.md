@@ -1,6 +1,6 @@
 # MusicRandomizer
 
-[Downloads](https://github.com/OatmealDome/SplatoonUtilities/releases/tag/MusicRandomizer) | [Splatoon Modding Hub](http://gbatemp.net/threads/splatoon-modding-hub.425670/)
+[Downloads](https://github.com/OatmealDome/SplatoonUtilities/releases) | [Splatoon Modding Hub](http://gbatemp.net/threads/splatoon-modding-hub.425670/)
 
 <img src="http://i.imgur.com/PnaL55y.jpg" width="53%" height="53%"/> <img src="http://i.imgur.com/AKXKPkZ.png" width="40%" height="40%" />
 
