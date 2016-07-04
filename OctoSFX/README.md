@@ -20,7 +20,7 @@ If you already have a cafiine server running on your computer, you can skip this
 1. Create a new folder for the server, download [cafiine_server.exe](https://github.com/MrRean/Cafiine-410-551/blob/master/server/cafiine_server.exe), and put the file inside it.
 2. Create the folders ```cafiine_root``` and ```logs``` inside the folder for cafiine server.
 3. Start the server to ensure that it works. If it is, there will be a message saying "```listening on port 7332```".
-4. Set a static IP address for your computer. (guide coming soon)
+4. Set a static IP address for your computer. Click [here](https://github.com/OatmealDome/SplatoonUtilities/blob/master/Misc/StaticIPGuide.md) for more information.
 
 ### Installing OctoSFX
 
@@ -31,7 +31,7 @@ If you already have a cafiine server running on your computer, you can skip this
 ### Preparing the AIO
 
 1. Download the [AIO](https://raw.githubusercontent.com/seresaa/Splat-AIO/master/Splat-AIO.zip) and extract its contents into a folder.
-2. Find your Wii U's IP address. (guide coming soon)
+2. Find your Wii U's IP address. Click [here](https://github.com/OatmealDome/SplatoonUtilities/blob/master/Misc/FindingWiiUIP.md) for more information.
 3. Start the AIO by double clicking on Splat-AIO.py.
 4. Type in in your Wii U's IP address and press enter. You should be looking at a menu screen.
 
