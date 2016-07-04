@@ -37,8 +37,11 @@ If you already have a cafiine server running on your computer, you can skip this
 
 ### Installing geckiine
 
-1. Go to [466gaming.ga/geckiine](http://466gaming.ga/geckiine) and enter in the static IP for your computer.
-2. Click download and extract the ZIP file.
+1. There are two possible ways to get a geckiine.elf file with your IP address.
+
+   a. Go to [466gaming.ga/geckiine](http://466gaming.ga/geckiine) and enter in your IP address. Click the download button and extract the ZIP file
+
+   b. Download ```geckiine.zip``` with Geckiine Creator from [here](https://github.com/seresaa/geckiine-creator/releases/tag/v0.1) and extract it. Run ```Geckiine Creator.exe```, enter in your IP address into the four boxes and click the "Create/Patch ELF" button.
 3. Copy the ```geckiine``` folder to the ```wiiu/apps``` folder on your SD card.
 4. Remove your SD card and insert it into the Wii U.
 
