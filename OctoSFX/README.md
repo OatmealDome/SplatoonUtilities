@@ -66,6 +66,16 @@ You will need to re-do this section every time you want to play Splatoon as an O
     - Try restarting the Wii U and re-doing the "Starting Splatoon" section.
     - Does anything appear in the cafiine server log about ```Sound.pack```? Is there an associated ```fclose()``` message with that log message? If there isn't, cafiine is probably still transferring the file. Try waiting a little bit longer.
 
+## Title ID List
+
+- North America: 00050000-10176900
+- Europe: 00050000-10176A00
+- Japan: 00050000-10162B00
+
+Example structure for North America:
+
+<img src="http://i.imgur.com/d5v4MWb.png" />
+
 ## Credits
 
 * bkool999 for creating OctoSFX
