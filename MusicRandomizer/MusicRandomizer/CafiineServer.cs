@@ -214,6 +214,8 @@ namespace MusicRandomizer
                                     // Read buffer params : fd, size, file data
                                     int fd = reader.ReadInt32();
                                     int sz = reader.ReadInt32();
+                                    byte[] buffer = new byte[sz];
+                                    buffer = reader.ReadBytes(sz);
 
                                     // Send response
                                     writer.Write(BYTE_SPECIAL);
