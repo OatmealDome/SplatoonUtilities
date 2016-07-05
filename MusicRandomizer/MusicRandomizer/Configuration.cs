@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 namespace MusicRandomizer
 {
     [Serializable]
-    class Configuration
+    public class Configuration
     {
         public String currentVersion;
         public SplatoonRegion region;
