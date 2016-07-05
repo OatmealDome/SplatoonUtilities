@@ -12,6 +12,7 @@ namespace MusicRandomizer
     class Configuration
     {
         public String currentVersion;
+        public SplatoonRegion region;
 
         private static XmlSerializer serializer = new XmlSerializer(typeof(Configuration));
         public static Configuration currentConfig;
@@ -20,8 +21,12 @@ namespace MusicRandomizer
         {
             if (!File.Exists("Configuration.xml"))
             {
+                VersionRequestForm requestForm = new VersionRequestForm();
+                requestForm.ShowDialog();
+
                 currentConfig = new Configuration();
                 currentConfig.currentVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                currentConfig.region = requestForm.chosenRegion;
 
                 Save();
             }
