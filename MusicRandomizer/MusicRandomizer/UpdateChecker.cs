@@ -44,6 +44,32 @@ namespace MusicRandomizer
                 // We don't need to convert anything
                 return;
             }
+
+            if (Directory.Exists("other_files"))
+            {
+                // Move the other_files directory to a new location depending on the user's region
+                switch (Configuration.currentConfig.region)
+                {
+                    case SplatoonRegion.NorthAmerica:
+                        {
+                            Directory.Move("other_files", "cafiine_root\\00050000-10176900");
+                            File.Create("cafiine_root\\00050000-10176900 - Splatoon NA.txt");
+                            break;
+                        }
+                    case SplatoonRegion.Europe:
+                        {
+                            Directory.Move("other_files", "cafiine_root\\00050000-10176A00");
+                            File.Create("cafiine_root\\00050000-10176A00 - Splatoon EU.txt");
+                            break;
+                        }
+                    case SplatoonRegion.Japan:
+                        {
+                            Directory.Move("other_files", "cafiine_root\\00050000-10162B00");
+                            File.Create("cafiine_root\\00050000-10162B00 - Splatoon JP.txt");
+                            break;
+                        }
+                }
+            }
         }
 
     }

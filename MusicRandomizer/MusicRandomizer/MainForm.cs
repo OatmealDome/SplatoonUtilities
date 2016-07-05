@@ -25,19 +25,22 @@ namespace MusicRandomizer
 
         private void Main_Load(object sender, EventArgs e)
         {
-            Configuration.Load();
-            UpdateChecker.ConvertIfNeeded();
-
+            // Create base directories first
             if (!Directory.Exists("tracks"))
             {
                 Directory.CreateDirectory("tracks");
             }
 
-            if (!Directory.Exists("other_files"))
+            if (!Directory.Exists("cafiine_root"))
             {
-                Directory.CreateDirectory(Path.Combine("other_files", "vol", "content"));
+                Directory.CreateDirectory("cafiine_root");
             }
 
+            // Load configuration and convert file structures if necessary
+            Configuration.Load();
+            UpdateChecker.ConvertIfNeeded();
+
+            // Load in the playlist
             if (!File.Exists("Tracks.xml"))
             {
                 musicFiles = new List<MusicFile>();
@@ -54,6 +57,7 @@ namespace MusicRandomizer
 
             RefreshTrackList();
 
+            // Start the cafiine server
             cafiineWorker.RunWorkerAsync();
             updateWorker.RunWorkerAsync(false);
         }

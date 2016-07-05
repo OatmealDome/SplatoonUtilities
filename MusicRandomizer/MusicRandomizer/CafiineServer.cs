@@ -114,6 +114,13 @@ namespace MusicRandomizer
                     {
                         isSplatoon = true;
                     }
+                    else if (!Directory.Exists("cafiine_root\\" + titleId))
+                    {
+                        // close the connection if there is no directory for this title
+                        Log(LogType.Info, name + " Refusing connection from " + titleId);
+                        writer.Write(BYTE_NORMAL);
+                        throw new Exception("Not interested.");
+                    }
                     
                     Log(LogType.Info, name + " Accepted connection (" + ((isSplatoon) ? "Splatoon" : titleId) + ")");
 
@@ -133,67 +140,59 @@ namespace MusicRandomizer
                                     string mode = reader.ReadString(Encoding.ASCII, len_mode - 1);
                                     if (reader.ReadByte() != 0) throw new InvalidDataException();
 
-                                    if (isSplatoon)
+                                    String localPath = "cafiine_root\\" + titleId + path;
+                                    if (isSplatoon && path.Contains(".bfstm"))
                                     {
-                                        String localPath = "other_files" + path;
-                                        if (path.Contains(".bfstm"))
-                                        {
-                                            String strippedPath = Path.GetFileName(path);
-                                            strippedPath = strippedPath.Substring(0, strippedPath.Length - 6); // get rid of ".bfstm"
+                                        String strippedPath = Path.GetFileName(path);
+                                        strippedPath = strippedPath.Substring(0, strippedPath.Length - 6); // get rid of ".bfstm"
 
-                                            MusicFile musicFile = mainForm.GetFile(strippedPath);
-                                            if (musicFile == null)
-                                            {
-                                                writer.Write(BYTE_NORMAL);
-                                                break;
-                                            }
-
-                                            Log(LogType.Info, name + " Replacing " + strippedPath + " with " + musicFile.fileName);
-                                            Log(LogType.NowPlaying, musicFile.fileName);
-
-                                            localPath = musicFile.path;
-                                        }
-                                        else if (File.Exists(localPath))
+                                        MusicFile musicFile = mainForm.GetFile(strippedPath);
+                                        if (musicFile == null)
                                         {
-                                            Log(LogType.Info, name + " Replacing " + path);
-                                        }
-                                        else
-                                        {
-                                            // not a music file and the file doesn't exist in our cafiine directory
                                             writer.Write(BYTE_NORMAL);
                                             break;
                                         }
 
-                                        int handle = -1;
-                                        for (int i = 0; i < files.Length; i++)
-                                        {
-                                            if (files[i] == null)
-                                            {
-                                                handle = i;
-                                                break;
-                                            }
-                                        }
+                                        Log(LogType.Info, name + " Replacing " + strippedPath + " with " + musicFile.fileName);
+                                        Log(LogType.NowPlaying, musicFile.fileName);
 
-                                        if (handle == -1)
-                                        {
-                                            Log(LogType.Error, name + " Out of file handles!");
-                                            writer.Write(BYTE_SPECIAL);
-                                            writer.Write(-19);
-                                            writer.Write(0);
-                                            break;
-                                        }
-
-                                        files[handle] = new FileStream(localPath, FileMode.Open, FileAccess.Read, FileShare.Read);
-
-                                        writer.Write(BYTE_SPECIAL);
-                                        writer.Write(0);
-                                        writer.Write(0x0fff00ff | (handle << 8));
+                                        localPath = musicFile.path;
+                                    }
+                                    else if (File.Exists(localPath))
+                                    {
+                                        Log(LogType.Info, name + " Replacing " + path);
                                     }
                                     else
                                     {
-                                        // not from splatoon, so just ignore this request
+                                        // not a music file from Splatoon and the file doesn't exist in our cafiine_root directory
                                         writer.Write(BYTE_NORMAL);
+                                        break;
                                     }
+
+                                    int handle = -1;
+                                    for (int i = 0; i < files.Length; i++)
+                                    {
+                                        if (files[i] == null)
+                                        {
+                                            handle = i;
+                                            break;
+                                        }
+                                    }
+
+                                    if (handle == -1)
+                                    {
+                                        Log(LogType.Error, name + " Out of file handles!");
+                                        writer.Write(BYTE_SPECIAL);
+                                        writer.Write(-19);
+                                        writer.Write(0);
+                                        break;
+                                    }
+
+                                    files[handle] = new FileStream(localPath, FileMode.Open, FileAccess.Read, FileShare.Read);
+
+                                    writer.Write(BYTE_SPECIAL);
+                                    writer.Write(0);
+                                    writer.Write(0x0fff00ff | (handle << 8));
 
                                     break;
                                 }

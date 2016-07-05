@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,11 @@ namespace MusicRandomizer
             {
                 MessageBox.Show("Please choose a region.");
                 return;
+            }
+
+            if (Directory.Exists("other_files"))
+            {
+                MessageBox.Show("The files inside other_files will be moved to a new folder called cafiine_root.");
             }
 
             if (radNorthAmerica.Checked)
