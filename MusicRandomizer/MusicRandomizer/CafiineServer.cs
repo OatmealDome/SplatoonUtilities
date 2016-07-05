@@ -86,6 +86,7 @@ namespace MusicRandomizer
                 TcpClient client = listener.AcceptTcpClient();
                 Thread thread = new Thread(HandleClient);
                 thread.Name = "[" + index.ToString() + "]";
+                thread.IsBackground = true;
                 thread.Start(client);
                 index++;
             }
