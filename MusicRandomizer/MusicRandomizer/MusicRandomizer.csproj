@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CafiineServer.cs" />
+    <Compile Include="Configuration.cs" />
     <Compile Include="EndianBinaryReader.cs" />
     <Compile Include="EndianBinaryWriter.cs" />
     <Compile Include="FileTracker.cs" />

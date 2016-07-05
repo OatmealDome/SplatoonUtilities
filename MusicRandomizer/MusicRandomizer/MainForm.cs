@@ -25,6 +25,9 @@ namespace MusicRandomizer
 
         private void Main_Load(object sender, EventArgs e)
         {
+            Configuration.Load();
+            UpdateChecker.ConvertIfNeeded();
+
             if (!Directory.Exists("tracks"))
             {
                 Directory.CreateDirectory("tracks");
