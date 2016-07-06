@@ -9,6 +9,7 @@ namespace MusicRandomizer
     public partial class PlaylistNameForm : Form
     {
         public String name;
+        private Boolean pressedSave = false;
 
         public PlaylistNameForm()
         {
@@ -25,10 +26,9 @@ namespace MusicRandomizer
 
         private void PlaylistNameForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            if (e.CloseReason == CloseReason.UserClosing && !pressedSave)
             {
                 name = null;
-                this.Close();
             }
         }
 
@@ -60,6 +60,7 @@ namespace MusicRandomizer
                 return;
             }
 
+            pressedSave = true;
             this.Close();
         }
 
