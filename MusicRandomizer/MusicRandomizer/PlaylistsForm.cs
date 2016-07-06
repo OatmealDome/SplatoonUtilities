@@ -36,6 +36,9 @@ namespace MusicRandomizer
             PlaylistNameForm newPlaylistForm = new PlaylistNameForm();
             newPlaylistForm.ShowDialog();
 
+            MainForm mainForm = (MainForm)this.Owner;
+            mainForm.SwitchPlaylist(newPlaylistForm.name);
+
             ReloadPlaylists();
         }
 
