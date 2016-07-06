@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -89,6 +90,21 @@ namespace MusicRandomizer
             {
                 MessageBox.Show("The following changes were made:\n\n" + changelist);
             }
+        }
+
+        public static String StripDot(String input)
+        {
+            StringBuilder builder = new StringBuilder(input.Length);
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (!input[i].Equals('.'))
+                {
+                    builder.Append(input[i]);
+                }
+            }
+
+            return builder.ToString();
         }
 
     }

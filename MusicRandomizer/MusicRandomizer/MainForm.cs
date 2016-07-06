@@ -188,7 +188,10 @@ namespace MusicRandomizer
             String version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             UpdateInfo updateInfo = UpdateChecker.CheckForUpdate();
 
-            if (!version.Equals(updateInfo.latestVersion))
+            int numberVersion = Int32.Parse(UpdateChecker.StripDot(version));
+            int updateVersion = Int32.Parse(UpdateChecker.StripDot(updateInfo.latestVersion));
+
+            if (updateVersion > numberVersion)
             {
                 String dialogString = "Version " + updateInfo.latestVersion + " is now available for MusicRandomizer with the following changes:\n\n" + updateInfo.changes;
                 dialogString += "\n\nWould you like to download the latest update from GitHub now?";
