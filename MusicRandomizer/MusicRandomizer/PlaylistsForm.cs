@@ -19,17 +19,10 @@ namespace MusicRandomizer
         private void ReloadPlaylists()
         {
             lstPlaylists.Items.Clear();
-            lstPlaylists.Items.Add("Default"); // force Default to be at the top
 
             String[] playlists = Directory.GetFiles("playlists");
             foreach (String playlist in playlists)
             {
-                if (playlist.Equals("playlists\\Default.xml"))
-                {
-                    // skip this, we added it earlier
-                    continue;
-                }
-
                 String playlistFilename = playlist.Substring(10, playlist.Length - 10); // strip "playlists\"
                 String playlistName = playlistFilename.Substring(0, playlistFilename.Length - 4); // strip ".xml"
                 lstPlaylists.Items.Add(playlistName);
@@ -60,22 +53,16 @@ namespace MusicRandomizer
         {
             String selectedPlaylist = (String)lstPlaylists.SelectedItem;
 
-            // Make sure they're not attempting to remove "Default"
-            if (selectedPlaylist.Equals("Default"))
+            // Check if the playlist we are about to delete is the current one
+            if (Configuration.currentConfig.currentPlaylist.Equals(selectedPlaylist))
             {
-                MessageBox.Show("You cannot remove the default playlist.");
+                // Refuse to do this
+                MessageBox.Show("You cannot delete the current playlist.");
                 return;
             }
 
             File.Delete(selectedPlaylist);
-
-            // Check if the playlist we just deleted is the current one
-            if (Configuration.currentConfig.currentPlaylist.Equals(selectedPlaylist))
-            {
-                // Change the current playlist to Default
-                MainForm mainForm = (MainForm)this.Owner;
-                mainForm.SwitchPlaylist("Default");
-            }
+            ReloadPlaylists();
         }
 
         private void lstPlaylists_MouseClick(object sender, MouseEventArgs e)

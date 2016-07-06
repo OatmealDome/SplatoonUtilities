@@ -43,12 +43,6 @@ namespace MusicRandomizer
                 return;
             }
 
-            // Create the playlist
-            using (FileStream writer = File.OpenWrite("playlists\\" + name + ".xml"))
-            {
-                MainForm.serializer.Serialize(writer, new List<MusicFile>());
-            }
-
             this.Close();
         }
 

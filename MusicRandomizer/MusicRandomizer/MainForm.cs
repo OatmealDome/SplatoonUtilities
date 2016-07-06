@@ -46,21 +46,7 @@ namespace MusicRandomizer
             UpdateChecker.ConvertIfNeeded();
 
             // Load in the playlist
-            if (!File.Exists("playlists\\Default.xml"))
-            {
-                musicFiles = new List<MusicFile>();
-
-                lstOutput.Items.Add("Please import your first track.");
-            }
-            else
-            {
-                using (FileStream stream = File.OpenRead("playlists\\" + Configuration.currentConfig.currentPlaylist + ".xml"))
-                {
-                    musicFiles = (List<MusicFile>)serializer.Deserialize(stream);
-                }
-            }
-
-            RefreshPlaylist();
+            SwitchPlaylist(Configuration.currentConfig.currentPlaylist);
 
             // Start the cafiine server
             cafiineWorker.RunWorkerAsync();
@@ -74,6 +60,16 @@ namespace MusicRandomizer
         public void SwitchPlaylist(String newPlaylist)
         {
             Configuration.currentConfig.currentPlaylist = newPlaylist;
+
+            // If this playlist doesn't exist, create it
+            if (!File.Exists("playlists\\" + newPlaylist + ".xml"))
+            {
+                using (FileStream writer = File.OpenWrite("playlists\\" + newPlaylist + ".xml"))
+                {
+                    MainForm.serializer.Serialize(writer, new List<MusicFile>());
+                }
+            }
+
             using (FileStream stream = File.OpenRead("playlists\\" + newPlaylist + ".xml"))
             {
                 musicFiles = (List<MusicFile>)serializer.Deserialize(stream);
