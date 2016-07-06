@@ -25,11 +25,6 @@ namespace MusicRandomizer
                 return;
             }
 
-            if (Directory.Exists("other_files"))
-            {
-                MessageBox.Show("The files inside other_files will be moved to a new folder called cafiine_root.");
-            }
-
             if (radNorthAmerica.Checked)
             {
                 chosenRegion = SplatoonRegion.NorthAmerica;
