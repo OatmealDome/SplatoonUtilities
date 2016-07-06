@@ -66,8 +66,7 @@ namespace MusicRandomizer
                 changelist += "- The files inside other_files were moved to a new folder called cafiine_root.\n";
             }
 
-
-            if (File.Exists("Tracks.xml"))
+            if (File.Exists("Tracks.xml") && !File.Exists("playlists\\Default.xml"))
             {
                 // Move the file so it is the new default playlist
                 File.Move("Tracks.xml", "playlists/Default.xml");
