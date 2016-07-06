@@ -57,11 +57,11 @@ namespace MusicRandomizer
             if (Configuration.currentConfig.currentPlaylist.Equals(selectedPlaylist))
             {
                 // Refuse to do this
-                MessageBox.Show("You cannot delete the current playlist.");
+                MessageBox.Show("You cannot remove the current playlist.");
                 return;
             }
 
-            File.Delete(selectedPlaylist);
+            File.Delete("playlists\\" + selectedPlaylist + ".xml");
             ReloadPlaylists();
         }
 
@@ -73,9 +73,15 @@ namespace MusicRandomizer
                 if (rightClickOver >= 0)
                 {
                     lstPlaylists.SelectedIndex = rightClickOver;
-                    contextMenuStrip.Show(Cursor.Position);
+                    contextMenu.Show(Cursor.Position);
                 }
             }
+        }
+
+        private void renameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String selectedPlaylist = (String)lstPlaylists.SelectedItem;
+
         }
     }
 }
