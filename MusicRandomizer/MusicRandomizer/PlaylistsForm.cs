@@ -82,7 +82,12 @@ namespace MusicRandomizer
         {
             if (e.Button == MouseButtons.Right)
             {
-                contextMenuStrip.Show(Cursor.Position);
+                int rightClickOver = lstPlaylists.IndexFromPoint(e.X, e.Y);
+                if (rightClickOver >= 0)
+                {
+                    lstPlaylists.SelectedIndex = rightClickOver;
+                    contextMenuStrip.Show(Cursor.Position);
+                }
             }
         }
     }

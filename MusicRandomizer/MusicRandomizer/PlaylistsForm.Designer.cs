@@ -48,7 +48,7 @@
             this.lstPlaylists.Name = "lstPlaylists";
             this.lstPlaylists.Size = new System.Drawing.Size(258, 108);
             this.lstPlaylists.TabIndex = 0;
-            this.lstPlaylists.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lstPlaylists_MouseClick);
+            this.lstPlaylists.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lstPlaylists_MouseClick);
             // 
             // lblPrompt
             // 
@@ -109,7 +109,7 @@
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
