@@ -73,6 +73,7 @@ namespace MusicRandomizer
             if (Configuration.currentConfig.currentPlaylist.Equals(oldName))
             {
                 Configuration.currentConfig.currentPlaylist = playlistNameForm.name;
+                Configuration.Save();
             }
         }
 

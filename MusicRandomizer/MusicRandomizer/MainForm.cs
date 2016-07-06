@@ -60,6 +60,7 @@ namespace MusicRandomizer
         public void SwitchPlaylist(String newPlaylist)
         {
             Configuration.currentConfig.currentPlaylist = newPlaylist;
+            Configuration.Save();
 
             // If this playlist doesn't exist, create it
             if (!File.Exists("playlists\\" + newPlaylist + ".xml"))
