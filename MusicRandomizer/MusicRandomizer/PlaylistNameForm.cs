@@ -23,6 +23,15 @@ namespace MusicRandomizer
             name = defaultName;
         }
 
+        private void PlaylistNameForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                name = null;
+                this.Close();
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
            name = txtName.Text;

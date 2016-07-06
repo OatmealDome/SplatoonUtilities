@@ -33,11 +33,16 @@ namespace MusicRandomizer
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            PlaylistNameForm newPlaylistForm = new PlaylistNameForm();
-            newPlaylistForm.ShowDialog();
+            PlaylistNameForm playlistNameForm = new PlaylistNameForm();
+            playlistNameForm.ShowDialog();
+
+            if (playlistNameForm.name == null)
+            {
+                return;
+            }
 
             MainForm mainForm = (MainForm)this.Owner;
-            mainForm.SwitchPlaylist(newPlaylistForm.name);
+            mainForm.SwitchPlaylist(playlistNameForm.name);
 
             ReloadPlaylists();
         }
@@ -65,6 +70,11 @@ namespace MusicRandomizer
             PlaylistNameForm playlistNameForm = new PlaylistNameForm(oldName);
             playlistNameForm.ShowDialog();
 
+            if (playlistNameForm.name == null)
+            {
+                return;
+            }
+
             // Rename the playlist
             File.Move("playlists\\" + oldName + ".xml", "playlists\\" + playlistNameForm.name + ".xml");
             ReloadPlaylists();
@@ -83,6 +93,11 @@ namespace MusicRandomizer
 
             PlaylistNameForm playlistNameForm = new PlaylistNameForm(toDuplicate + " (Copy)");
             playlistNameForm.ShowDialog();
+
+            if (playlistNameForm.name == null)
+            {
+                return;
+            }
 
             // Duplicate the playlist
             File.Copy("playlists\\" + toDuplicate + ".xml", "playlists\\" + playlistNameForm.name + ".xml");
