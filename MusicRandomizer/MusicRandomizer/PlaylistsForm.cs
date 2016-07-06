@@ -19,7 +19,7 @@ namespace MusicRandomizer
         private void ReloadPlaylists()
         {
             lstPlaylists.Items.Clear();
-            lstPlaylists.Items.Add("Default");
+            lstPlaylists.Items.Add("Default"); // force Default to be at the top
 
             String[] playlists = Directory.GetFiles("playlists");
             foreach (String playlist in playlists)
