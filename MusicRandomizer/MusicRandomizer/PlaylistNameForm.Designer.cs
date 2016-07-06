@@ -67,8 +67,10 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblPrompt);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PlaylistNameForm";
             this.Text = "Playlist Name";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlaylistNameForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

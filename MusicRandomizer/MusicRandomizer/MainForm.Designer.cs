@@ -45,6 +45,7 @@
             this.lstOutput = new System.Windows.Forms.ListBox();
             this.cafiineWorker = new System.ComponentModel.BackgroundWorker();
             this.grpControls = new System.Windows.Forms.GroupBox();
+            this.btnPlaylists = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.radTrueRandom = new System.Windows.Forms.RadioButton();
             this.radInOrder = new System.Windows.Forms.RadioButton();
@@ -54,7 +55,6 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateWorker = new System.ComponentModel.BackgroundWorker();
-            this.btnPlaylists = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.grpTracks.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -108,14 +108,14 @@
             // usageToolStripMenuItem
             // 
             this.usageToolStripMenuItem.Name = "usageToolStripMenuItem";
-            this.usageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usageToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.usageToolStripMenuItem.Text = "Usage";
             this.usageToolStripMenuItem.Click += new System.EventHandler(this.usageToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -203,6 +203,16 @@
             this.grpControls.TabStop = false;
             this.grpControls.Text = "Controls";
             // 
+            // btnPlaylists
+            // 
+            this.btnPlaylists.Location = new System.Drawing.Point(96, 48);
+            this.btnPlaylists.Name = "btnPlaylists";
+            this.btnPlaylists.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaylists.TabIndex = 8;
+            this.btnPlaylists.Text = "Playlists";
+            this.btnPlaylists.UseVisualStyleBackColor = true;
+            this.btnPlaylists.Click += new System.EventHandler(this.btnPlaylists_Click);
+            // 
             // btnImport
             // 
             this.btnImport.Location = new System.Drawing.Point(96, 19);
@@ -284,16 +294,6 @@
             // 
             this.updateWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.updateWorker_DoWork);
             // 
-            // btnPlaylists
-            // 
-            this.btnPlaylists.Location = new System.Drawing.Point(96, 48);
-            this.btnPlaylists.Name = "btnPlaylists";
-            this.btnPlaylists.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaylists.TabIndex = 8;
-            this.btnPlaylists.Text = "Playlists";
-            this.btnPlaylists.UseVisualStyleBackColor = true;
-            this.btnPlaylists.Click += new System.EventHandler(this.btnPlaylists_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,6 +303,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpTracks);
             this.Controls.Add(this.menuStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
             this.Text = "Splatoon Music Randomizer";

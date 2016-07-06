@@ -101,15 +101,17 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // VersionRequestForm
+            // RegionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(217, 162);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grpRegions);
             this.Controls.Add(this.label1);
-            this.Name = "VersionRequestForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "RegionForm";
             this.Text = "Region";
             this.Load += new System.EventHandler(this.VersionRequestForm_Load);
             this.grpRegions.ResumeLayout(false);
