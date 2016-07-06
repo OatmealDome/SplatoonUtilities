@@ -46,6 +46,12 @@ namespace MusicRandomizer
         {
             String selectedPlaylist = (String)lstPlaylists.SelectedItem;
 
+            if (selectedPlaylist == null)
+            {
+                MessageBox.Show("Please select a playlist.");
+                return;
+            }
+
             MainForm mainForm = (MainForm)this.Owner;
             mainForm.SwitchPlaylist(selectedPlaylist);
 
