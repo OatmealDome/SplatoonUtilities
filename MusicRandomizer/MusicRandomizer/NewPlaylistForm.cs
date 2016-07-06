@@ -37,14 +37,10 @@ namespace MusicRandomizer
             }
 
             // Check to make sure this name isn't already taken
-            String[] playlists = Directory.GetFiles("playlists");
-            foreach (String playlist in playlists)
+            if (File.Exists("playlists\\" + name + ".xml"))
             {
-                if (playlist.Equals(name))
-                {
-                    MessageBox.Show("This playlist already exists.");
-                    return;
-                }
+                MessageBox.Show("That playlist already exists.");
+                return;
             }
 
             // Create the playlist
