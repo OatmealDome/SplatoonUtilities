@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkForUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +54,7 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateWorker = new System.ComponentModel.BackgroundWorker();
-            this.checkForUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPlaylists = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.grpTracks.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,10 +82,17 @@
             this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.programToolStripMenuItem.Text = "Program";
             // 
+            // checkForUpdateToolStripMenuItem
+            // 
+            this.checkForUpdateToolStripMenuItem.Name = "checkForUpdateToolStripMenuItem";
+            this.checkForUpdateToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.checkForUpdateToolStripMenuItem.Text = "Check for Update";
+            this.checkForUpdateToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdateToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -182,6 +190,7 @@
             // 
             // grpControls
             // 
+            this.grpControls.Controls.Add(this.btnPlaylists);
             this.grpControls.Controls.Add(this.btnImport);
             this.grpControls.Controls.Add(this.radTrueRandom);
             this.grpControls.Controls.Add(this.radInOrder);
@@ -241,7 +250,7 @@
             // 
             // btnPlayNext
             // 
-            this.btnPlayNext.Location = new System.Drawing.Point(96, 48);
+            this.btnPlayNext.Location = new System.Drawing.Point(96, 77);
             this.btnPlayNext.Name = "btnPlayNext";
             this.btnPlayNext.Size = new System.Drawing.Size(75, 23);
             this.btnPlayNext.TabIndex = 0;
@@ -275,12 +284,15 @@
             // 
             this.updateWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.updateWorker_DoWork);
             // 
-            // checkForUpdateToolStripMenuItem
+            // btnPlaylists
             // 
-            this.checkForUpdateToolStripMenuItem.Name = "checkForUpdateToolStripMenuItem";
-            this.checkForUpdateToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.checkForUpdateToolStripMenuItem.Text = "Check for Update";
-            this.checkForUpdateToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdateToolStripMenuItem_Click);
+            this.btnPlaylists.Location = new System.Drawing.Point(96, 48);
+            this.btnPlaylists.Name = "btnPlaylists";
+            this.btnPlaylists.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaylists.TabIndex = 8;
+            this.btnPlaylists.Text = "Playlists";
+            this.btnPlaylists.UseVisualStyleBackColor = true;
+            this.btnPlaylists.Click += new System.EventHandler(this.btnPlaylists_Click);
             // 
             // MainForm
             // 
@@ -336,6 +348,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker updateWorker;
         private System.Windows.Forms.ToolStripMenuItem checkForUpdateToolStripMenuItem;
+        private System.Windows.Forms.Button btnPlaylists;
     }
 }
 

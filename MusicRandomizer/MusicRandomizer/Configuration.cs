@@ -13,6 +13,7 @@ namespace MusicRandomizer
     {
         public String currentVersion;
         public SplatoonRegion region;
+        public String currentPlaylist;
 
         private static XmlSerializer serializer = new XmlSerializer(typeof(Configuration));
         public static Configuration currentConfig;
@@ -27,6 +28,7 @@ namespace MusicRandomizer
                 currentConfig = new Configuration();
                 currentConfig.currentVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 currentConfig.region = requestForm.chosenRegion;
+                currentConfig.currentPlaylist = "Default";
 
                 Save();
             }

@@ -233,7 +233,7 @@ namespace MusicRandomizer
                 file.types = types;
             }
 
-            mainForm.RefreshTrackList();
+            mainForm.RefreshPlaylist();
 
             this.Close();
         }

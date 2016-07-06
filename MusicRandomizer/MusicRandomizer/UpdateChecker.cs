@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace MusicRandomizer
@@ -45,6 +46,8 @@ namespace MusicRandomizer
                 return;
             }
 
+            String changelist = "";
+
             if (Directory.Exists("other_files"))
             {
                 // Move the other_files directory to a new location depending on the user's region
@@ -69,6 +72,26 @@ namespace MusicRandomizer
                             break;
                         }
                 }
+
+                changelist += "- The files inside other_files were moved to a new folder called cafiine_root.\n";
+            }
+
+
+            if (File.Exists("Tracks.xml"))
+            {
+                // Move the file so it is the new default playlist
+                File.Move("Tracks.xml", "playlists/Default.xml");
+
+                // Set the default playlist in Configuration
+                Configuration.currentConfig.currentPlaylist = "Default";
+                Configuration.Save();
+
+                changelist += "- The current Tracks.xml file has become the new default playlist.\n";
+            }
+
+            if (changelist.Length != 0)
+            {
+                MessageBox.Show("The following changes were made:\n\n" + changelist);
             }
         }
 

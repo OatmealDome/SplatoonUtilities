@@ -10,9 +10,9 @@ namespace MusicRandomizer
     public partial class MainForm : Form
     {
         public static readonly Random random = new Random();
+        public static XmlSerializer serializer = new XmlSerializer(typeof(List<MusicFile>), new XmlRootAttribute("Tracks"));
         public List<MusicFile> musicFiles;
 
-        private XmlSerializer serializer = new XmlSerializer(typeof(List<MusicFile>), new XmlRootAttribute("Tracks"));
         private CafiineServer cafiineServer;
         private List<FileTracker> fileTrackers = new List<FileTracker>();
         private PlayMode playMode = PlayMode.Shuffle;
@@ -31,6 +31,11 @@ namespace MusicRandomizer
                 Directory.CreateDirectory("tracks");
             }
 
+            if (!Directory.Exists("playlists"))
+            {
+                Directory.CreateDirectory("playlists");
+            }
+
             if (!Directory.Exists("cafiine_root"))
             {
                 Directory.CreateDirectory("cafiine_root");
@@ -41,7 +46,7 @@ namespace MusicRandomizer
             UpdateChecker.ConvertIfNeeded();
 
             // Load in the playlist
-            if (!File.Exists("Tracks.xml"))
+            if (!File.Exists("playlists\\Default.xml"))
             {
                 musicFiles = new List<MusicFile>();
 
@@ -49,13 +54,13 @@ namespace MusicRandomizer
             }
             else
             {
-                using (FileStream stream = File.OpenRead("Tracks.xml"))
+                using (FileStream stream = File.OpenRead("playlists\\" + Configuration.currentConfig.currentPlaylist + ".xml"))
                 {
                     musicFiles = (List<MusicFile>)serializer.Deserialize(stream);
                 }
             }
 
-            RefreshTrackList();
+            RefreshPlaylist();
 
             // Start the cafiine server
             cafiineWorker.RunWorkerAsync();
@@ -66,12 +71,22 @@ namespace MusicRandomizer
         {
         }
 
-        public void RefreshTrackList()
+        public void SwitchPlaylist(String newPlaylist)
         {
-            lsvTracks.Items.Clear();
+            Configuration.currentConfig.currentPlaylist = newPlaylist;
+            using (FileStream stream = File.OpenRead("playlists\\" + newPlaylist + ".xml"))
+            {
+                musicFiles = (List<MusicFile>)serializer.Deserialize(stream);
+            }
 
+            RefreshPlaylist();
+        }
+
+        public void RefreshPlaylist()
+        {
             int numberOfTrackers = Enum.GetValues(typeof(TrackType)).Length - 1; // subtract 1 so Unknown is not included
 
+            lsvTracks.Items.Clear();
             fileTrackers.Clear();
 
             for (int i = 0; i < numberOfTrackers; i++)
@@ -94,13 +109,13 @@ namespace MusicRandomizer
                 lsvTracks.Items.Add(new ListViewItem(new String[] { name.Substring(0, name.Length - 6), types }));
             }
 
-            SaveTrackList();
+            SavePlaylist();
         }
 
-        public void SaveTrackList()
+        public void SavePlaylist()
         {
-            File.Delete("Tracks.xml");
-            using (FileStream writer = File.OpenWrite("Tracks.xml"))
+            File.Delete("playlists\\" + Configuration.currentConfig.currentPlaylist + ".xml");
+            using (FileStream writer = File.OpenWrite("playlists\\" + Configuration.currentConfig.currentPlaylist + ".xml"))
             {
                 serializer.Serialize(writer, musicFiles);
             }
@@ -225,7 +240,19 @@ namespace MusicRandomizer
             musicFiles.Remove(file);
             lsvTracks.Items.RemoveAt(lsvTracks.SelectedIndices[0]);
 
-            SaveTrackList();
+            SavePlaylist();
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            ImportForm importForm = new ImportForm();
+            importForm.ShowDialog(this);
+        }
+
+        private void btnPlaylists_Click(object sender, EventArgs e)
+        {
+            PlaylistsForm playlistsForm = new PlaylistsForm();
+            playlistsForm.ShowDialog(this);
         }
 
         private void btnPlayNext_Click(object sender, EventArgs e)
@@ -236,12 +263,6 @@ namespace MusicRandomizer
             }
 
             playNext = musicFiles[lsvTracks.SelectedIndices[0]];
-        }
-
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-            ImportForm importForm = new ImportForm();
-            importForm.ShowDialog(this);
         }
 
         private void radShuffle_CheckedChanged(object sender, EventArgs e)
@@ -290,5 +311,6 @@ namespace MusicRandomizer
             // show a poor man's version of an about dialog
             MessageBox.Show("MusicRandomizer (" + version + ")\nCopyright (c) 2016 OatmealDome");
         }
+
     }
 }
