@@ -36,13 +36,6 @@ namespace MusicRandomizer
 
         public static void ConvertIfNeeded()
         {
-            String version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            if (Configuration.currentConfig.currentVersion.Equals(version))
-            {
-                // We don't need to convert anything
-                return;
-            }
-
             String changelist = "";
 
             if (Directory.Exists("other_files"))
