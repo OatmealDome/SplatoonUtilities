@@ -22,7 +22,7 @@ namespace MusicRandomizer
         {
             if (!File.Exists("Configuration.xml"))
             {
-                VersionRequestForm requestForm = new VersionRequestForm();
+                RegionForm requestForm = new RegionForm();
                 requestForm.ShowDialog();
 
                 currentConfig = new Configuration();

@@ -83,11 +83,11 @@
     <Compile Include="SplatoonRegion.cs" />
     <Compile Include="TrackType.cs" />
     <Compile Include="UpdateChecker.cs" />
-    <Compile Include="VersionRequestForm.cs">
+    <Compile Include="RegionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VersionRequestForm.Designer.cs">
-      <DependentUpon>VersionRequestForm.cs</DependentUpon>
+    <Compile Include="RegionForm.Designer.cs">
+      <DependentUpon>RegionForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -110,8 +110,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VersionRequestForm.resx">
-      <DependentUpon>VersionRequestForm.cs</DependentUpon>
+    <EmbeddedResource Include="RegionForm.resx">
+      <DependentUpon>RegionForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace MusicRandomizer
 {
-    public partial class VersionRequestForm : Form
+    public partial class RegionForm : Form
     {
         public SplatoonRegion chosenRegion;
 
-        public VersionRequestForm()
+        public RegionForm()
         {
             InitializeComponent();
         }

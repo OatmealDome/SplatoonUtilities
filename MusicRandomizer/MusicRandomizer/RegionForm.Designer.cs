@@ -1,6 +1,6 @@
 ﻿namespace MusicRandomizer
 {
-    partial class VersionRequestForm
+    partial class RegionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.grpRegions = new System.Windows.Forms.GroupBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.radJapan = new System.Windows.Forms.RadioButton();
             this.radEurope = new System.Windows.Forms.RadioButton();
             this.radNorthAmerica = new System.Windows.Forms.RadioButton();
+            this.btnSave = new System.Windows.Forms.Button();
             this.grpRegions.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,16 +57,6 @@
             this.grpRegions.TabIndex = 1;
             this.grpRegions.TabStop = false;
             this.grpRegions.Text = "Regions";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(71, 131);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // radJapan
             // 
@@ -101,6 +91,16 @@
             this.radNorthAmerica.Text = "North America";
             this.radNorthAmerica.UseVisualStyleBackColor = true;
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(71, 131);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // VersionRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,7 +110,7 @@
             this.Controls.Add(this.grpRegions);
             this.Controls.Add(this.label1);
             this.Name = "VersionRequestForm";
-            this.Text = "Version Request";
+            this.Text = "Region";
             this.Load += new System.EventHandler(this.VersionRequestForm_Load);
             this.grpRegions.ResumeLayout(false);
             this.grpRegions.PerformLayout();
