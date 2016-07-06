@@ -15,6 +15,14 @@ namespace MusicRandomizer
             InitializeComponent();
         }
 
+        public NewPlaylistForm(String defaultName)
+        {
+            InitializeComponent();
+
+            txtName.Text = defaultName;
+            name = defaultName;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
            name = txtName.Text;

@@ -49,6 +49,36 @@ namespace MusicRandomizer
             ReloadPlaylists();
         }
 
+        private void renameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String oldName = (String)lstPlaylists.SelectedItem;
+
+            NewPlaylistForm newPlaylistForm = new NewPlaylistForm(oldName);
+            newPlaylistForm.ShowDialog();
+
+            // Rename the playlist
+            File.Move("playlists\\" + oldName + ".xml", "playlists\\" + newPlaylistForm.name + ".xml");
+            ReloadPlaylists();
+
+            // Check if this is the current playlist and update Configuration if it is
+            if (Configuration.currentConfig.currentPlaylist.Equals(oldName))
+            {
+                Configuration.currentConfig.currentPlaylist = newPlaylistForm.name;
+            }
+        }
+
+        private void duplicateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String toDuplicate = (String)lstPlaylists.SelectedItem;
+
+            NewPlaylistForm newPlaylistForm = new NewPlaylistForm(toDuplicate + " (Copy)");
+            newPlaylistForm.ShowDialog();
+
+            // Duplicate the playlist
+            File.Copy("playlists\\" + toDuplicate + ".xml", "playlists\\" + newPlaylistForm.name + ".xml");
+            ReloadPlaylists();
+        }
+
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String selectedPlaylist = (String)lstPlaylists.SelectedItem;
@@ -78,10 +108,5 @@ namespace MusicRandomizer
             }
         }
 
-        private void renameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            String selectedPlaylist = (String)lstPlaylists.SelectedItem;
-
-        }
     }
 }
