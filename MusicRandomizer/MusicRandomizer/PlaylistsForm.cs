@@ -33,7 +33,7 @@ namespace MusicRandomizer
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            NewPlaylistForm newPlaylistForm = new NewPlaylistForm();
+            PlaylistNameForm newPlaylistForm = new PlaylistNameForm();
             newPlaylistForm.ShowDialog();
 
             ReloadPlaylists();
@@ -53,17 +53,17 @@ namespace MusicRandomizer
         {
             String oldName = (String)lstPlaylists.SelectedItem;
 
-            NewPlaylistForm newPlaylistForm = new NewPlaylistForm(oldName);
-            newPlaylistForm.ShowDialog();
+            PlaylistNameForm playlistNameForm = new PlaylistNameForm(oldName);
+            playlistNameForm.ShowDialog();
 
             // Rename the playlist
-            File.Move("playlists\\" + oldName + ".xml", "playlists\\" + newPlaylistForm.name + ".xml");
+            File.Move("playlists\\" + oldName + ".xml", "playlists\\" + playlistNameForm.name + ".xml");
             ReloadPlaylists();
 
             // Check if this is the current playlist and update Configuration if it is
             if (Configuration.currentConfig.currentPlaylist.Equals(oldName))
             {
-                Configuration.currentConfig.currentPlaylist = newPlaylistForm.name;
+                Configuration.currentConfig.currentPlaylist = playlistNameForm.name;
             }
         }
 
@@ -71,11 +71,11 @@ namespace MusicRandomizer
         {
             String toDuplicate = (String)lstPlaylists.SelectedItem;
 
-            NewPlaylistForm newPlaylistForm = new NewPlaylistForm(toDuplicate + " (Copy)");
-            newPlaylistForm.ShowDialog();
+            PlaylistNameForm playlistNameForm = new PlaylistNameForm(toDuplicate + " (Copy)");
+            playlistNameForm.ShowDialog();
 
             // Duplicate the playlist
-            File.Copy("playlists\\" + toDuplicate + ".xml", "playlists\\" + newPlaylistForm.name + ".xml");
+            File.Copy("playlists\\" + toDuplicate + ".xml", "playlists\\" + playlistNameForm.name + ".xml");
             ReloadPlaylists();
         }
 

@@ -6,16 +6,16 @@ using System.Windows.Forms;
 
 namespace MusicRandomizer
 {
-    public partial class NewPlaylistForm : Form
+    public partial class PlaylistNameForm : Form
     {
         public String name;
 
-        public NewPlaylistForm()
+        public PlaylistNameForm()
         {
             InitializeComponent();
         }
 
-        public NewPlaylistForm(String defaultName)
+        public PlaylistNameForm(String defaultName)
         {
             InitializeComponent();
 
