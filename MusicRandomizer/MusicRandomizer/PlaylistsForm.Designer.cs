@@ -108,7 +108,7 @@
             this.duplicateToolStripMenuItem,
             this.removeToolStripMenuItem});
             this.contextMenu.Name = "contextMenuStrip";
-            this.contextMenu.Size = new System.Drawing.Size(153, 92);
+            this.contextMenu.Size = new System.Drawing.Size(125, 70);
             // 
             // removeToolStripMenuItem
             // 
@@ -141,7 +141,7 @@
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.lblPrompt);
             this.Name = "PlaylistsForm";
-            this.Text = "PlaylistsForm";
+            this.Text = "Playlists";
             this.Load += new System.EventHandler(this.PlaylistsForm_Load);
             this.grpPlaylists.ResumeLayout(false);
             this.grpPlaylists.PerformLayout();
