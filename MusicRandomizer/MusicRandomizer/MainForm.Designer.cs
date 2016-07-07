@@ -187,6 +187,7 @@
             this.cafiineWorker.WorkerReportsProgress = true;
             this.cafiineWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.cafiineWorker_DoWork);
             this.cafiineWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.cafiineWorker_ProgressChanged);
+            this.cafiineWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.cafiineWorker_RunWorkerCompleted);
             // 
             // grpControls
             // 

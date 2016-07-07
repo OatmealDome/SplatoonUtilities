@@ -180,6 +180,12 @@ namespace MusicRandomizer
             }
         }
 
+        private void cafiineWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("An error was encountered when starting the cafiine server. Please ensure that there are no other cafiine servers running on this computer.\n\nDetails: " + e.Result);
+            this.Close();
+        }
+
         private void updateWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             String version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
