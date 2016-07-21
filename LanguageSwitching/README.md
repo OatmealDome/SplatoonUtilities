@@ -22,8 +22,7 @@ This guide will help you change your current language to a different one.
 3. Open Uwizard and go to the "Settings" tab.
 4. Paste the Wii U's common key into the box dedicated for it. If it is correct, then the text next to the text box will turn green.
 5. Go to the "NUS Downloader U" tab.
-6. Enter in the title ID (see below), changing the last 0 before the dash to an E, leaving out the dash, and adding a 0 to the end. (example for North America: ```0005000E101769000```)
-7. Enter in the latest version number (as of June 13, 2016 it is ```208```) and check "Decrypt Contents". If you do not enter in the latest version number, you will get outdated files and some strings may be missing. (Version numbers are multiples of 16.)
+6. Enter in the title ID (see below), changing the last 0 before the dash to an E, leaving out the dash, and adding a 0 to the end. (example for North America: ```0005000E101769000```) Leave the version number text box blank, as this will force Uwizard to download the latest version. You will need to keep the ```.szs``` files you download up-to-date, otherwise some text may be missing or the game may crash if a new update is released.
 8. Click "Start Download" and wait. Once it is finished, Windows Explorer will pop up with the newly downloaded and decrypted files.
 
 ### Replacing the language files
