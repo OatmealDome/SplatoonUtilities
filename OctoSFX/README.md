@@ -10,7 +10,7 @@ This mod was made by bkool999 and replaces specific Inkling Girl sound effects w
 
 * a Wii U on an exploitable firmware (4.1.0 to 5.5.1)
 * Homebrew Launcher 
-* Python 2.7
+* a computer running Windows 7 or up
 * a cafiine server (examples: [the original by Chadderz and MrRean](https://github.com/MrRean/Cafiine-410-551/blob/master/server/cafiine_server.exe), [MusicRandomizer](https://github.com/OatmealDome/SplatoonUtilities/blob/master/MusicRandomizer/README.md), [Ray's custom server](https://github.com/Syroot/CafiineServer), and more)
 
 ### Setting up a cafiine server
@@ -30,10 +30,10 @@ If you already have a cafiine server running on your computer, you can skip this
 
 ### Preparing the AIO
 
-1. Download the [AIO](https://raw.githubusercontent.com/seresaa/Splat-AIO/master/Splat-AIO.zip) and extract its contents into a folder.
+1. Download the [AIO](https://github.com/seresaa/Splat-AIO-2/releases) and put the ```SplatAIO.exe``` into a folder.
 2. Find your Wii U's IP address. Click [here](https://github.com/OatmealDome/SplatoonUtilities/blob/master/Misc/FindingWiiUIP.md) for more information.
-3. Start the AIO by double clicking on ```Splat-AIO.py```.
-4. Type in in your Wii U's IP address and press enter. You should be looking at a menu screen.
+3. Start the AIO by double clicking on the ```SplatAIO.exe``` file.
+4. Type in in your Wii U's IP address into the text box. **Do not click "Connect" yet.**
 
 ### Installing geckiine
 
@@ -51,7 +51,7 @@ If you already have a cafiine server running on your computer, you can skip this
 2. Go to [loadiine.ovh](http://loadiine.ovh) and start the Homebrew Launcher.
 3. From the list of applications, tap on geckiine, and press "Start". You will be returned to the Wii U menu.
 4. Start Splatoon. Due to the slow transfer rate of cafiine and the large size of the ```Sound.pack``` file (~58MB), your Wii U may hang for a while on the splash screen with the drums playing. This is normal.
-5. On [the loading screen with the squids swimming towards the top](http://33.media.tumblr.com/fbe13f9f0ed194113ed449f9dbcad00b/tumblr_nt4jr35e291thqzumo1_500.gif), type in "1" into the AIO menu if you want the regular squid form or "2" if you want the broken octopus form. Press enter after typing in a number.
+5. On [the loading screen with the squids swimming towards the top](http://33.media.tumblr.com/fbe13f9f0ed194113ed449f9dbcad00b/tumblr_nt4jr35e291thqzumo1_500.gif), click "Connect" on the AIO and choose your preferred Octohax on the right hand side.
 6. You're now an Octoling with the proper sound effects!
 
 You will need to re-do this section every time you want to play Splatoon as an Octoling with the proper sound effects.
@@ -82,8 +82,9 @@ Example structure for North America:
 ## Credits
 
 * bkool999 for creating OctoSFX
-* seresaa for being quality control
+* seresaa for being quality control and for the new AIO
 * NWPlayer123 for Octohax
+* Nefarious for contributions to the AIO
 * PhantoCrystal for obtaining the Octoling SFX
 * amibu for helping out
-* OatmealDome for writing the guide and releasing geckiine
+* OatmealDome for writing the guide, releasing geckiine and contributions to the AIO
