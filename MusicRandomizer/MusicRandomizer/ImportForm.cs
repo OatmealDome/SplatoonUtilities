@@ -237,5 +237,18 @@ namespace MusicRandomizer
 
             this.Close();
         }
+
+        private void chkWorld_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkWorld.Checked)
+            {
+                AlertChannels(5);
+            }
+        }
+
+        private void AlertChannels(int number)
+        {
+            MessageBox.Show("The bfstm file you open(ed) must have " + number + " channels or else it will not play correctly in-game.");
+        }
     }
 }
