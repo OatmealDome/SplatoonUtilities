@@ -22,7 +22,11 @@ namespace MusicRandomizer
             string xml;
             using (var client = new WebClient())
             {
+#if DEBUG
+                xml = client.DownloadString("https://oatmealdome.github.io/MusicRandomizer/UpdateInfo-pre-release.xml");
+#else
                 xml = client.DownloadString("https://oatmealdome.github.io/MusicRandomizer/UpdateInfo.xml");
+#endif
             }
 
             UpdateInfo updateInfo;
