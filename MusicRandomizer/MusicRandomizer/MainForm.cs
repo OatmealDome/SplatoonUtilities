@@ -312,10 +312,11 @@ namespace MusicRandomizer
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            //String version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            String version = "1.0.2.0";
 
             // show a poor man's version of an about dialog
-            MessageBox.Show("MusicRandomizer (" + version + ")\nCopyright (c) 2016 OatmealDome");
+            MessageBox.Show("MusicRandomizer (" + version + ")\nCopyright (c) 2016 OatmealDome\n\nPre-release version, please update when the final build is out");
         }
 
     }
