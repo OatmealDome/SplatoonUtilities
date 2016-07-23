@@ -153,6 +153,21 @@ namespace MusicRandomizer
             {
                 return TrackType.SoloWorld;
             }
+            else if (fileName.Equals("STRM_SCLive_LastBossIdol_BU"))
+            {
+                // this track replaced Ink Me Up during the last splatfest's second day
+                // before replacing, ensure that the splatfest is ongoing
+                int now = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+                if (now < 1469350800)
+                {
+                    return TrackType.VSBackground;
+                }
+                else
+                {
+                    // splatfest is over and the amiibo plaza uses this track, so don't replace it
+                    return TrackType.Unknown;
+                }
+            }
 
             return TrackType.Unknown;
         }
