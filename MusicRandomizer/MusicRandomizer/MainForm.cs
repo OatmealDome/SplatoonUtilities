@@ -93,6 +93,14 @@ namespace MusicRandomizer
 
             foreach (MusicFile file in musicFiles)
             {
+                // ensure that the file actually exists first
+                if (!File.Exists(file.path))
+                {
+                    // it doesn't, remove the file from the playlist
+                    musicFiles.Remove(file);
+                    continue;
+                }
+
                 String types = "";
                 foreach (TrackType type in file.types)
                 {
