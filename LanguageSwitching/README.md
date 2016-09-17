@@ -103,6 +103,6 @@ This is a list of the different versions of Splatoon and which language files th
    
 ## Credits
 
-* amiibu for doing language switching before me
+* amibu for doing language switching before me
 * KapuDaKoopa for inspiration
 
