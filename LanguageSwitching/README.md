@@ -12,7 +12,7 @@ This guide will help you change your current language to a different one.
 
 * [Uwizard](https://gbatemp.net/threads/uwizard-all-in-one-wii-u-pc-program.386508/) (or any other program that can download from NUS and decrypt the contents)
 * [The Wii U common key](https://google.com/search?q=Wii+U+Common+Key)
-* [cafiine_server](https://github.com/MrRean/Cafiine-410-551/blob/master/server/cafiine_server.exe)
+* [cafiine_server](https://dl.dropboxusercontent.com/u/38313036/cafiine_server.exe)
 * [Your local IP address](http://windows.microsoft.com/en-ca/windows/find-computers-ip-address#1TC=windows-7)
 
 ### Downloading the language files
