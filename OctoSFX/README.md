@@ -11,13 +11,13 @@ This mod was made by bkool999 and replaces specific Inkling Girl sound effects w
 * a Wii U on an exploitable firmware (4.1.0 to 5.5.1)
 * Homebrew Launcher 
 * a computer running Windows 7 or up
-* a cafiine server (examples: [the original by Chadderz and MrRean](https://github.com/MrRean/Cafiine-410-551/blob/master/server/cafiine_server.exe), [MusicRandomizer](https://github.com/OatmealDome/SplatoonUtilities/blob/master/MusicRandomizer/README.md), [Ray's custom server](https://github.com/Syroot/CafiineServer), and more)
+* a cafiine server (examples: [the original by Chadderz and MrRean](https://dl.dropboxusercontent.com/u/38313036/cafiine_server.exe), [MusicRandomizer](https://github.com/OatmealDome/SplatoonUtilities/blob/master/MusicRandomizer/README.md), [Ray's custom server](https://github.com/Syroot/CafiineServer), and more)
 
 ### Setting up a cafiine server
 
 If you already have a cafiine server running on your computer, you can skip this section.
 
-1. Create a new folder for the server, download [cafiine_server.exe](https://github.com/MrRean/Cafiine-410-551/blob/master/server/cafiine_server.exe), and put the file inside it.
+1. Create a new folder for the server, download [cafiine_server.exe](https://dl.dropboxusercontent.com/u/38313036/cafiine_server.exe), and put the file inside it.
 2. Create the folders ```cafiine_root``` and ```logs``` inside the folder for cafiine server.
 3. Start the server to ensure that it works. If it is, there will be a message saying "listening on port 7332".
 4. Set a static IP address for your computer. Click [here](https://github.com/OatmealDome/SplatoonUtilities/blob/master/Misc/StaticIPGuide.md) for more information.
